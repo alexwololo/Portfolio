@@ -3,7 +3,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f5f5f5;
+  background-color: #000000;
   color: #333;
 }
 
@@ -18,16 +18,19 @@ body {
     'weather about about date'
     'case1 about about theme'
     'case1 clock case2 case2';
-  gap: 20px;
+  gap: 17px;
   padding: 20px;
 }
 
 .bento-item {
-  background-color: #fff;
+  background-color: #f2f1f1;
   padding: 20px;
   border: 1px solid #ddd;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
   border-radius: 30px;
+}
+.main {
+  background-color: #fee6e6;
 }
 
 .bento-item h2 {
