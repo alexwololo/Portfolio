@@ -1,3 +1,4 @@
+/* Basic styling for the body */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -6,38 +7,100 @@ body {
   color: #333;
 }
 
-header {
-  text-align: center;
-  padding: 20px 0;
-  background-color: #333;
-  color: #fff;
-}
-
-h1 {
-  margin: 0;
-  font-size: 2.5rem;
-}
-
+/* Grid container for the main content */
 .bento-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(4, 1fr); /* Four columns */
+  grid-template-rows: auto;
+  grid-template-areas:
+    'header header header header'
+    'about contact theme theme'
+    'color clock weather date'
+    'case1 case2 case3 case3'; /* Defined grid areas for layout */
   gap: 20px;
   padding: 20px;
 }
 
+/* Basic styling for each bento item */
 .bento-item {
   background-color: #fff;
   padding: 20px;
   border: 1px solid #ddd;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 30px;
+  border-radius: 30px; /* Rounded corners */
 }
 
+/* Ensuring the first h2 in each bento item has no margin */
 .bento-item h2 {
   margin-top: 0;
 }
 
-footer {
+/* Specific placement for each section in the grid */
+.bento-item:nth-child(1) {
+  grid-area: header;
+}
+
+.bento-item:nth-child(2) {
+  grid-area: about;
+}
+
+.bento-item:nth-child(3) {
+  grid-area: contact;
+}
+
+.bento-item:nth-child(4) {
+  grid-area: theme;
+}
+
+.bento-item:nth-child(5) {
+  grid-area: color;
+}
+
+.bento-item:nth-child(6) {
+  grid-area: clock;
+}
+
+.bento-item:nth-child(7) {
+  grid-area: weather;
+}
+
+.bento-item:nth-child(8) {
+  grid-area: date;
+}
+
+.bento-item:nth-child(9) {
+  grid-area: case1;
+}
+
+.bento-item:nth-child(10) {
+  grid-area: case2;
+}
+
+.bento-item:nth-child(11) {
+  grid-area: case3;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+  .bento-grid {
+    grid-template-columns: 1fr; /* Single column layout on small screens */
+    grid-template-areas:
+      'header'
+      'about'
+      'contact'
+      'theme'
+      'color'
+      'clock'
+      'weather'
+      'date'
+      'case1'
+      'case2'
+      'case3'; /* Stack all sections vertically */
+  }
+}
+
+/* Footer styling removed as it is commented out in HTML */
+/* .footer {
   text-align: center;
   padding: 10px 0;
   background-color: #333;
@@ -45,24 +108,4 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-}
-
-@media (max-width: 600px) {
-  .bento-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.bento-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.bento-item:nth-child(1) {
-  grid-column: span 3; /* Sträcker sig över två kolumner */
-}
-
-.bento-item:nth-child(2) {
-  grid-row: span 2; /* Sträcker sig över två rader */
-}
+} */
