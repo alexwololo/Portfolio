@@ -13,6 +13,10 @@
     />
     <link
       rel="stylesheet"
+      href="css/theme.css"
+    />
+    <link
+      rel="stylesheet"
       href="css/main.css"
     />
   </head>
@@ -38,7 +42,20 @@
       <!-- Section: Theme and Customization -->
       <section class="bento-item">
         <h2>Theme</h2>
-        <p>Dark / Light mode.</p>
+        <div class="theme-switch">
+          <input
+            type="checkbox"
+            id="theme-toggle"
+            class="theme-switch-checkbox"
+          />
+          <label
+            class="theme-switch-label"
+            for="theme-toggle"
+          >
+            <span class="theme-switch-inner"></span>
+            <span class="theme-switch-knob"></span>
+          </label>
+        </div>
       </section>
 
       <section class="bento-item">
