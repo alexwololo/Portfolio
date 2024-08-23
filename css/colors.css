@@ -1,0 +1,35 @@
+/* Default: Dark Mode */
+:root {
+  --background-color: #1a1a1a;
+  --text-color: #cccccc;
+  --bento-item-background: #333333;
+  --bento-item-border: #444444;
+  --bento-item-shadow: rgba(0, 0, 0, 0.2);
+  --main-background-color: #444444;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background-color: #f0f0f0;
+    --text-color: #333333;
+    --bento-item-background: #ffffff;
+    --bento-item-border: #ddd;
+    --bento-item-shadow: rgba(0, 0, 0, 0.1);
+    --main-background-color: #e6e6e6;
+  }
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.bento-item {
+  background-color: var(--bento-item-background);
+  border: 1px solid var(--bento-item-border);
+  box-shadow: 2px 2px 10px var(--bento-item-shadow);
+}
+
+.main {
+  background-color: var(--main-background-color);
+}

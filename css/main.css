@@ -3,8 +3,6 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #000000;
-  color: #333;
 }
 
 /* Grid container for the main content */
@@ -23,14 +21,15 @@ body {
 }
 
 .bento-item {
-  background-color: #f2f1f1;
   padding: 20px;
-  border: 1px solid #ddd;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: var(--bento-item-background);
+  border: 1px solid var(--bento-item-border);
+  box-shadow: 2px 2px 10px var(--bento-item-shadow);
   border-radius: 30px;
 }
+
 .main {
-  background-color: #fee6e6;
+  background-color: var(--main-background-color);
 }
 
 .bento-item h2 {
