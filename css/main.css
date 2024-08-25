@@ -4,7 +4,7 @@ body {
   padding: 0;
 }
 
-/* Make sure the html and body fill the entire viewport */
+/* Hml and body fill the entire viewport */
 html,
 body {
   height: 100%;
@@ -12,8 +12,8 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: center; /* Center the grid horizontally */
-  align-items: center; /* Center the grid vertically */
+  justify-content: center; /* Center grid horizontally */
+  align-items: center; /* Center grid vertically */
   background-color: var(--background-color);
 }
 
@@ -34,8 +34,8 @@ body {
     'case1 clock case2 case2';
   gap: 17px;
   padding: 20px;
-  box-sizing: border-box; /* Ensure padding is included in the width and height */
-  margin: auto; /* Center the grid within the body */
+  box-sizing: border-box;
+  margin: auto;
 }
 
 /* Center content within each bento item */
@@ -48,7 +48,7 @@ body {
   border: 1px solid var(--bento-item-border);
   box-shadow: 2px 2px 10px var(--bento-item-shadow);
   border-radius: 30px;
-  box-sizing: border-box; /* Ensure padding is included in the width and height */
+  box-sizing: border-box;
 }
 
 .main {
@@ -100,7 +100,6 @@ body {
   grid-area: case2;
 }
 
-/* Alternative layout for screens smaller than 900px */
 @media (max-width: 900px) {
   .bento-grid {
     grid-template-columns: 1fr 1fr; /* Two columns layout */
@@ -113,7 +112,6 @@ body {
       'case2 case2'; /* Arrange items in two columns */
   }
 
-  /* Responsive design for screens smaller than 600px */
   @media (max-width: 600px) {
     .bento-grid {
       grid-template-columns: 1fr; /* Single column on small screens */
@@ -133,6 +131,6 @@ body {
 
   .bento-item {
     padding: 10px; /* Reduce padding for smaller screens */
-    font-size: 0.9rem; /* Slightly reduce font size */
+    font-size: 0.9rem;
   }
 }

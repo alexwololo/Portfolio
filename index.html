@@ -17,6 +17,10 @@
     />
     <link
       rel="stylesheet"
+      href="css/palette.css"
+    />
+    <link
+      rel="stylesheet"
       href="css/main.css"
     />
   </head>
@@ -28,7 +32,6 @@
         class="bento-item main"
       >
         <h2>Header</h2>
-        <p>A header with typewriter effect.</p>
       </section>
 
       <section
@@ -36,7 +39,13 @@
         class="bento-item main"
       >
         <h2>About Me</h2>
-        <p>A brief description about me.</p>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti laudantium unde alias,
+          eligendi hic commodi saepe perspiciatis voluptas officia accusantium minima ducimus
+          possimus. Iure sit suscipit accusantium totam cupiditate aut sequi adipisci harum
+          obcaecati in quaerat quod sed dolore quasi maiores commodi, nulla, quidem necessitatibus.
+          Sequi, architecto. Aspernatur, qui soluta!.
+        </p>
       </section>
 
       <section
@@ -44,7 +53,6 @@
         class="bento-item"
       >
         <h2>Contact</h2>
-        <p>Contact information and form.</p>
       </section>
 
       <!-- Theme -->
@@ -52,7 +60,6 @@
         id="theme"
         class="bento-item"
       >
-        <h2>Theme</h2>
         <div class="theme-switch">
           <input
             type="checkbox"
@@ -69,12 +76,17 @@
         </div>
       </section>
 
+      <!-- Palette -->
       <section
         id="color-picker"
-        class="bento-item"
+        class="bento-item palette-container"
       >
-        <h2>Color Picker</h2>
-        <p>Select and preview colors.</p>
+        <input
+          type="color"
+          id="colorInput"
+          value="#ff0000"
+        />
+        <div id="colorPalette"></div>
       </section>
 
       <!-- Time -->
@@ -82,8 +94,7 @@
         id="clock"
         class="bento-item"
       >
-        <h2>Clock</h2>
-        <p id="clockDisplay">The time will appear here.</p>
+        <h2 id="clockDisplay">Time will appear here.</h2>
       </section>
 
       <!-- Weather -->
@@ -92,7 +103,6 @@
         class="bento-item main"
       >
         <h2>Weather</h2>
-        <p>Weather in Gothenburg.</p>
       </section>
 
       <!-- Date -->
@@ -100,8 +110,7 @@
         id="date"
         class="bento-item"
       >
-        <h2>Date</h2>
-        <p id="dateDisplay">date will appear here.</p>
+        <h2 id="dateDisplay">date will appear here.</h2>
         <p id="date-display"></p>
       </section>
 
@@ -111,7 +120,6 @@
         class="bento-item"
       >
         <h2>Case 1</h2>
-        <p>Small game in the grid.</p>
       </section>
 
       <section
@@ -119,12 +127,12 @@
         class="bento-item main"
       >
         <h2>Case 2</h2>
-        <p>Another project or feature.</p>
       </section>
     </main>
 
     <script src="js/script.js"></script>
     <script src="js/date.js"></script>
     <script src="js/time.js"></script>
+    <script src="js/palette.js"></script>
   </body>
 </html>

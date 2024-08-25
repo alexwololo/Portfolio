@@ -8,7 +8,7 @@ function showDate() {
 
   // Find the HTML element with id "dateDisplay" and set text to the formatted date
   const dateElement = document.getElementById('dateDisplay');
-  dateElement.innerText = "Today's date is: " + formattedDate;
+  dateElement.innerText = formattedDate;
 }
 
 // Call the function to show the date

@@ -14,7 +14,7 @@ function showClock() {
 
   // Find the HTML element id "clockDisplay" and set its text to the current time
   const clockElement = document.getElementById('clockDisplay');
-  clockElement.innerText = 'Current time: ' + sweTime;
+  clockElement.innerText = sweTime;
 }
 
 // Update the clock every second

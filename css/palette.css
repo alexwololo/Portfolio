@@ -1,0 +1,38 @@
+/* Basic styling for the color picker and palette */
+.palette-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 200px;
+  margin: 0 auto;
+}
+
+#colorInput {
+  width: 80%;
+  height: 80%;
+  border: none;
+  cursor: pointer;
+  border-radius: 25%;
+}
+
+#colorPalette {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.color-swatch {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.color-swatch:hover {
+  border: 2px solid #000;
+}
