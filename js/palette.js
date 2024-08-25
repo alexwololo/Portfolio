@@ -27,13 +27,13 @@ document.addEventListener('DOMContentLoaded', function () {
     const hexG = g.toString(16).padStart(2, '0');
     const hexB = b.toString(16).padStart(2, '0');
 
-    // Combine the hex strings to hex color code
+    // Combine hex strings to hex color code
     const hexColor = '#' + hexR + hexG + hexB;
 
     return hexColor;
   }
 
-  // Update the palette with new selected color
+  // Update palette with new selected color
   colorInput.addEventListener('input', function () {
     addColorToPalette(this.value);
   });

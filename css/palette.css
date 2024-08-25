@@ -6,7 +6,7 @@
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 10px;
-  width: 200px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -15,7 +15,6 @@
   height: 80%;
   border: none;
   cursor: pointer;
-  border-radius: 25%;
 }
 
 #colorPalette {
@@ -23,16 +22,4 @@
   flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
-}
-
-.color-swatch {
-  width: 40px;
-  height: 40px;
-  border-radius: 5px;
-  cursor: pointer;
-  border: 2px solid transparent;
-}
-
-.color-swatch:hover {
-  border: 2px solid #000;
 }
