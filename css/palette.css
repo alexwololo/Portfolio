@@ -23,3 +23,11 @@
   gap: 10px;
   justify-content: center;
 }
+
+#colorCanvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 10px;
+  cursor: crosshair;
+}
