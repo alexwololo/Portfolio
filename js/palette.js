@@ -33,9 +33,10 @@ document.addEventListener('DOMContentLoaded', function () {
   canvas.addEventListener('click', function (event) {
     const x = event.offsetX;
     const y = event.offsetY;
-    const imageData = context.getImageData(x, y, 1, 1).data; // Get color data from the clicked pixel
+    const imageData = context.getImageData(x, y, 1, 1).data;
     const color = `rgb(${imageData[0]}, ${imageData[1]}, ${imageData[2]})`;
     addColorToPalette(color);
+    changeBackgroundColor(color); // Ändrar bakgrundsfärgen
   });
 
   function addColorToPalette(color) {
@@ -44,14 +45,19 @@ document.addEventListener('DOMContentLoaded', function () {
     colorBox.style.backgroundColor = color;
 
     colorBox.addEventListener('click', function () {
-      console.log('Selected color: ' + rgbToHex(color)); // Print the color in HEX format when clicked
+      console.log('Selected color: ' + rgbToHex(color));
+      changeBackgroundColor(color); // Ändrar bakgrundsfärgen vid klick på färg i paletten
     });
 
     colorPalette.appendChild(colorBox);
   }
 
+  function changeBackgroundColor(color) {
+    document.body.style.backgroundColor = color; // Ändrar bakgrundsfärgen
+  }
+
   function rgbToHex(rgb) {
-    const rgbValues = rgb.match(/\d+/g); // Extract numbers from the RGB string
+    const rgbValues = rgb.match(/\d+/g);
 
     const r = parseInt(rgbValues[0]);
     const g = parseInt(rgbValues[1]);
