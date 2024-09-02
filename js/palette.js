@@ -1,8 +1,13 @@
 document.addEventListener('DOMContentLoaded', function () {
   const canvas = document.getElementById('colorCanvas');
   const context = canvas.getContext('2d');
-  const colorPalette = document.getElementById('colorPalette');
   let isMouseDown = false;
+
+  function initializeElements() {
+    return Array.from(document.querySelectorAll('.bento-item, .bento-item.main'));
+  }
+
+  let availableElements = initializeElements(); // Initialize the list on load
 
   function resizeCanvas() {
     canvas.width = canvas.offsetWidth;
@@ -36,11 +41,21 @@ document.addEventListener('DOMContentLoaded', function () {
     const y = event.offsetY;
     const imageData = context.getImageData(x, y, 1, 1).data;
     const color = `rgb(${imageData[0]}, ${imageData[1]}, ${imageData[2]})`;
-    changeBackgroundColor(color);
+    applyColorToElement(color);
   }
 
-  function changeBackgroundColor(color) {
-    document.body.style.backgroundColor = color;
+  function applyColorToElement(color) {
+    if (availableElements.length === 0) {
+      availableElements = initializeElements(); // Reset the list when elements have been colored
+    }
+
+    const randomIndex = Math.floor(Math.random() * availableElements.length); // Select a random element
+    const targetElement = availableElements[randomIndex];
+
+    if (targetElement) {
+      targetElement.style.backgroundColor = color;
+      availableElements.splice(randomIndex, 1); // Remove the element from list after it has been colored
+    }
   }
 
   canvas.addEventListener('mousedown', function () {
