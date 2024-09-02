@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const canvas = document.getElementById('colorCanvas');
   const context = canvas.getContext('2d');
   const colorPalette = document.getElementById('colorPalette');
+  let isMouseDown = false;
 
   function resizeCanvas() {
     canvas.width = canvas.offsetWidth;
@@ -30,45 +31,35 @@ document.addEventListener('DOMContentLoaded', function () {
     context.fillRect(0, 0, canvas.width, canvas.height);
   }
 
-  canvas.addEventListener('click', function (event) {
+  function pickColor(event) {
     const x = event.offsetX;
     const y = event.offsetY;
     const imageData = context.getImageData(x, y, 1, 1).data;
     const color = `rgb(${imageData[0]}, ${imageData[1]}, ${imageData[2]})`;
-    addColorToPalette(color);
-    changeBackgroundColor(color); // Ändrar bakgrundsfärgen
-  });
-
-  function addColorToPalette(color) {
-    const colorBox = document.createElement('div');
-    colorBox.className = 'color-box';
-    colorBox.style.backgroundColor = color;
-
-    colorBox.addEventListener('click', function () {
-      console.log('Selected color: ' + rgbToHex(color));
-      changeBackgroundColor(color); // Ändrar bakgrundsfärgen vid klick på färg i paletten
-    });
-
-    colorPalette.appendChild(colorBox);
+    changeBackgroundColor(color);
   }
 
   function changeBackgroundColor(color) {
-    document.body.style.backgroundColor = color; // Ändrar bakgrundsfärgen
+    document.body.style.backgroundColor = color;
   }
 
-  function rgbToHex(rgb) {
-    const rgbValues = rgb.match(/\d+/g);
+  canvas.addEventListener('mousedown', function () {
+    isMouseDown = true;
+  });
 
-    const r = parseInt(rgbValues[0]);
-    const g = parseInt(rgbValues[1]);
-    const b = parseInt(rgbValues[2]);
+  canvas.addEventListener('mouseup', function () {
+    isMouseDown = false;
+  });
 
-    const hexR = r.toString(16).padStart(2, '0');
-    const hexG = g.toString(16).padStart(2, '0');
-    const hexB = b.toString(16).padStart(2, '0');
+  canvas.addEventListener('mousemove', function (event) {
+    if (isMouseDown) {
+      pickColor(event);
+    }
+  });
 
-    return `#${hexR}${hexG}${hexB}`;
-  }
+  canvas.addEventListener('click', function (event) {
+    pickColor(event);
+  });
 
   window.addEventListener('resize', resizeCanvas);
   resizeCanvas();
