@@ -1,4 +1,5 @@
-/* Basic styling for the color picker and palette */
+@import url('colors.css');
+
 .palette-container {
   display: flex;
   flex-direction: column;

@@ -1,19 +1,19 @@
+@import url('colors.css');
+
 :root[data-theme='dark'] {
-  --background-color: #1a1a1a;
-  --text-color: #cccccc;
-  --bento-item-background: #333333;
-  --bento-item-border: #444444;
-  --bento-item-shadow: rgba(0, 0, 0, 0.2);
-  --main-background-color: #444444;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  --bento-item-background: var(--bento-item-background);
+  --bento-item-border: var(--bento-item-border);
+  --bento-item-shadow: var(--bento-item-shadow);
 }
 
 :root[data-theme='light'] {
-  --background-color: #8e8484;
-  --text-color: #333333;
-  --bento-item-background: #ffffff;
-  --bento-item-border: #ddd;
-  --bento-item-shadow: rgba(0, 0, 0, 0.1);
-  --main-background-color: #e6e6e6;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  --bento-item-background: var(--bento-item-background);
+  --bento-item-border: var(--bento-item-border);
+  --bento-item-shadow: var(--bento-item-shadow);
 }
 
 .switch {

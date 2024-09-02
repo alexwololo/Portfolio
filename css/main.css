@@ -1,7 +1,10 @@
+@import url('colors.css');
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  background-color: var(--background-color);
 }
 
 /* Hml and body fill the entire viewport */

@@ -1,0 +1,28 @@
+:root[data-theme='dark'] {
+  --background-color: #1a1a1a;
+  --text-color: #cccccc;
+  --bento-item-background: #333333;
+  --bento-item-border: #444444;
+  --bento-item-shadow: rgba(0, 0, 0, 0.2);
+  --main-background-color: #444444;
+}
+
+:root[data-theme='light'] {
+  --background-color: #8e8484;
+  --text-color: #333333;
+  --bento-item-background: #ffffff;
+  --bento-item-border: #ddd;
+  --bento-item-shadow: rgba(0, 0, 0, 0.1);
+  --main-background-color: #e6e6e6;
+}
+
+/* Gradient palette.js */
+:root {
+  --red: red;
+  --orange: orange;
+  --yellow: yellow;
+  --green: green;
+  --cyan: cyan;
+  --blue: blue;
+  --magenta: magenta;
+}
