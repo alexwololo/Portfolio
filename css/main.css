@@ -7,7 +7,6 @@ body {
   background-color: var(--background-color);
 }
 
-/* Hml and body fill the entire viewport */
 html,
 body {
   height: 100%;

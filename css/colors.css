@@ -8,12 +8,12 @@
 }
 
 :root[data-theme='light'] {
-  --background-color: #8e8484;
+  --background-color: #f2f2f2;
   --text-color: #333333;
   --bento-item-background: #ffffff;
   --bento-item-border: #ddd;
   --bento-item-shadow: rgba(0, 0, 0, 0.1);
-  --main-background-color: #e6e6e6;
+  --main-background-color: #d1d1d1;
 }
 
 /* Gradient palette.js */
