@@ -67,11 +67,11 @@ input:checked + .slider:before {
 
 #sun-moon-container {
   position: relative;
-  width: 160px; /* Tillräckligt för att rymma både solen och månen */
+  width: 160px;
   height: 64px;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Placera solen till vänster och månen till höger */
+  justify-content: space-between;
 }
 
 #sun,
@@ -81,9 +81,29 @@ input:checked + .slider:before {
 }
 
 #sun {
-  stroke: currentColor; /* Använd den nuvarande textfärgen för konturer */
+  stroke: currentColor;
 }
 
 #moon {
-  stroke: currentColor; /* Använd den nuvarande textfärgen för konturer */
+  stroke: currentColor;
+}
+
+[data-theme='light'] #sun {
+  opacity: 1;
+  visibility: visible;
+}
+
+[data-theme='dark'] #sun {
+  opacity: 0;
+  visibility: hidden;
+}
+
+[data-theme='light'] #moon {
+  opacity: 0;
+  visibility: hidden;
+}
+
+[data-theme='dark'] #moon {
+  opacity: 1;
+  visibility: visible;
 }
