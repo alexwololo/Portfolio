@@ -3,7 +3,8 @@
   --text-color: #cccccc;
   --bento-item-background: #333333;
   --bento-item-border: #444444;
-  --bento-item-shadow: rgba(0, 0, 0, 0.2);
+  --bento-item-shadow: rgba(255, 255, 255, 0.05);
+  --bento-item-hover-shadow: rgba(255, 255, 255, 0.3);
   --main-background-color: #444444;
 }
 
@@ -12,7 +13,8 @@
   --text-color: #333333;
   --bento-item-background: #ffffff;
   --bento-item-border: #ddd;
-  --bento-item-shadow: rgba(0, 0, 0, 0.1);
+  --bento-item-shadow: rgba(0, 0, 0, 0.05);
+  --bento-item-hover-shadow: rgba(0, 0, 0, 0.3);
   --main-background-color: #d1d1d1;
 }
 
