@@ -22,10 +22,12 @@ function showDate() {
   const dateElement = document.getElementById('dateDisplay');
   dateElement.innerHTML = `
     <div class="calendar">
-      <div class="month">${month}</div>
-      <div class="separator"></div>
-      <div class="day">${day}</div>
-    </div>
+    <div class="handles"></div>
+    <div class="month">August</div>
+    <div class="separator"></div>
+    <div class="day">24</div>
+</div>
+
   `;
 }
 
