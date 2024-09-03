@@ -1,6 +1,31 @@
-#dateDisplay {
-  font-size: 1.5rem;
+.calendar {
+  align-items: center;
+  border: 3px solid #000;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  height: 180px;
+  margin: 0 auto;
+  padding: 20px;
+  width: 180px;
+}
+
+.calendar .day {
+  font-size: 48px;
   font-weight: bold;
-  text-align: center;
-  color: var(--text-color);
+}
+
+.calendar .month {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 2px;
+  text-transform: uppercase;
+}
+
+.calendar .separator {
+  background-color: #000;
+  height: 2px;
+  margin: 0;
+  width: 100%;
 }

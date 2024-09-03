@@ -3,26 +3,30 @@ function showDate() {
   let day = today.getDate();
 
   let months = [
-    'Januari',
-    'Februari',
-    'Mars',
+    'January',
+    'February',
+    'March',
     'April',
-    'Maj',
-    'Juni',
-    'Juli',
-    'Augusti',
+    'May',
+    'June',
+    'July',
+    'August',
     'September',
-    'Oktober',
+    'October',
     'November',
     'December',
   ];
 
   let month = months[today.getMonth()];
 
-  let formattedDate = day + ' ' + month;
-
   const dateElement = document.getElementById('dateDisplay');
-  dateElement.innerText = formattedDate;
+  dateElement.innerHTML = `
+    <div class="calendar">
+      <div class="month">${month}</div>
+      <div class="separator"></div>
+      <div class="day">${day}</div>
+    </div>
+  `;
 }
 
 showDate();
