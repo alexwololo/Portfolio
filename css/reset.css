@@ -6,9 +6,74 @@
   box-sizing: border-box;
 }
 
+body,
+html {
+  height: 100%;
+  width: 100%;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+p {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: normal;
+}
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 a {
   text-decoration: none;
   color: inherit;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  padding: 0;
+  text-align: left;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  outline: none;
+  color: inherit;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
 }
 
 article,
@@ -25,6 +90,10 @@ section {
   display: block;
 }
 
+button {
+  cursor: pointer;
+}
+
 blockquote,
 q {
   quotes: none;
@@ -36,73 +105,4 @@ q::before,
 q::after {
   content: '';
   content: none;
-}
-
-body,
-html {
-  height: 100%;
-  width: 100%;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  background-color: var(--background-color);
-  color: var(--text-color);
-}
-
-button {
-  cursor: pointer;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
-  font-weight: normal;
-}
-
-img,
-video {
-  max-width: 100%;
-  height: auto;
-}
-
-input,
-button,
-textarea,
-select {
-  font: inherit;
-  margin: 0;
-  padding: 0;
-  border: none;
-  background: none;
-  outline: none;
-  color: inherit;
-}
-
-p {
-  margin: 0;
-  padding: 0;
-  line-height: 1.5;
-  font-size: 16px;
-}
-
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-th,
-td {
-  padding: 0;
-  text-align: left;
-}
-
-ul,
-ol {
-  list-style: none;
-  margin: 0;
-  padding: 0;
 }
