@@ -1,15 +1,28 @@
 function showDate() {
   let today = new Date();
-  let year = today.getFullYear();
-  let month = today.getMonth() + 1; // Add 1 because months start at 0
   let day = today.getDate();
 
-  let formattedDate = day + '/' + month + '/' + year;
+  let months = [
+    'Januari',
+    'Februari',
+    'Mars',
+    'April',
+    'Maj',
+    'Juni',
+    'Juli',
+    'Augusti',
+    'September',
+    'Oktober',
+    'November',
+    'December',
+  ];
 
-  // Find the HTML element with id "dateDisplay" and set text to the formatted date
+  let month = months[today.getMonth()];
+
+  let formattedDate = day + ' ' + month;
+
   const dateElement = document.getElementById('dateDisplay');
   dateElement.innerText = formattedDate;
 }
 
-// Call the function to show the date
 showDate();
