@@ -35,6 +35,10 @@
     />
     <link
       rel="stylesheet"
+      href="css/time.css"
+    />
+    <link
+      rel="stylesheet"
       href="css/main.css"
     />
   </head>
@@ -130,7 +134,74 @@
         id="clock"
         class="bento-item"
       >
-        <h2 id="clockDisplay">Time will appear here.</h2>
+        <div class="clock-container">
+          <div class="time-group">
+            <div class="flip-box">
+              <div
+                class="flip-box-inner"
+                id="hour-tens"
+              >
+                <div class="flip-front">0</div>
+                <div class="flip-back">0</div>
+              </div>
+            </div>
+            <div class="flip-box">
+              <div
+                class="flip-box-inner"
+                id="hour-ones"
+              >
+                <div class="flip-front">0</div>
+                <div class="flip-back">0</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="time-separator">:</div>
+
+          <div class="time-group">
+            <div class="flip-box">
+              <div
+                class="flip-box-inner"
+                id="minute-tens"
+              >
+                <div class="flip-front">0</div>
+                <div class="flip-back">0</div>
+              </div>
+            </div>
+            <div class="flip-box">
+              <div
+                class="flip-box-inner"
+                id="minute-ones"
+              >
+                <div class="flip-front">0</div>
+                <div class="flip-back">0</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="time-separator">:</div>
+
+          <div class="time-group">
+            <div class="flip-box">
+              <div
+                class="flip-box-inner"
+                id="second-tens"
+              >
+                <div class="flip-front">0</div>
+                <div class="flip-back">0</div>
+              </div>
+            </div>
+            <div class="flip-box">
+              <div
+                class="flip-box-inner"
+                id="second-ones"
+              >
+                <div class="flip-front">0</div>
+                <div class="flip-back">0</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- Weather -->

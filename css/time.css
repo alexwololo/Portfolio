@@ -1,0 +1,71 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f7f7f7;
+  margin: 0;
+}
+
+.clock-container {
+  display: flex;
+  gap: 10px;
+}
+
+.time-group {
+  display: flex;
+  gap: 5px;
+}
+
+.time-separator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+  line-height: 80px;
+  color: #333;
+}
+
+.flip-box {
+  perspective: 1000px;
+}
+
+.flip-box-inner {
+  position: relative;
+  width: 40px;
+  height: 80px;
+  text-align: center;
+  background-color: #333;
+  color: white;
+  font-size: 48px;
+  line-height: 80px;
+  border-radius: 8px;
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease-in-out;
+  transform-origin: center bottom;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.flip-front,
+.flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.flip-front {
+  background-color: #333;
+}
+
+.flip-back {
+  background-color: #555;
+  transform: rotateX(-90deg);
+}

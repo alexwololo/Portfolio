@@ -18,7 +18,24 @@
   --main-background-color: #d1d1d1;
 }
 
-/* Gradient palette.js */
+/* tiem */
+:root {
+  --background-color: #f7f7f7;
+  --text-color: #333;
+  --flip-box-background: #333;
+  --flip-box-color: white;
+  --separator-color: #333;
+}
+
+:root[data-theme='dark'] {
+  --background-color: #1a1a1a;
+  --text-color: #ccc;
+  --flip-box-background: #555;
+  --flip-box-color: white;
+  --separator-color: #ccc;
+}
+
+/* gradient palette.js */
 :root {
   --red: red;
   --orange: orange;
