@@ -1,5 +1,23 @@
 #typewriter {
-  border-right: 2px solid black;
+  display: inline-block;
   white-space: nowrap;
   overflow: hidden;
+  border-right: 3px solid black;
+  animation: blink 0.9s step-end infinite;
+  vertical-align: bottom;
+}
+
+#static-part {
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+@keyframes blink {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: black;
+  }
 }
