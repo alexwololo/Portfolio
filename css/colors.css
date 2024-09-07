@@ -6,7 +6,6 @@
   --bento-item-shadow: rgba(255, 255, 255, 0.05);
   --bento-item-hover-shadow: rgba(255, 255, 255, 0.3);
   --main-background-color: #444444;
-
   --flip-box-background: #eee;
   --flip-box-color: #333;
   --separator-color: #eee;
@@ -14,6 +13,7 @@
   --flip-back-color: #333;
   --flip-front-background: #eee;
   --flip-back-background: #ccc;
+  --highlight-color: #00ffff;
 }
 
 :root[data-theme='light'] {
@@ -24,7 +24,6 @@
   --bento-item-shadow: rgba(0, 0, 0, 0.05);
   --bento-item-hover-shadow: rgba(0, 0, 0, 0.3);
   --main-background-color: #d1d1d1;
-
   --flip-box-background: #333;
   --flip-box-color: white;
   --separator-color: #333;
@@ -32,6 +31,7 @@
   --flip-back-color: white;
   --flip-front-background: #333;
   --flip-back-background: #555;
+  --highlight-color: #2196f3;
 }
 
 :root {
