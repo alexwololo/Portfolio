@@ -6,6 +6,14 @@
   --bento-item-shadow: rgba(255, 255, 255, 0.05);
   --bento-item-hover-shadow: rgba(255, 255, 255, 0.3);
   --main-background-color: #444444;
+
+  --flip-box-background: #eee;
+  --flip-box-color: #333;
+  --separator-color: #eee;
+  --flip-front-color: #333;
+  --flip-back-color: #333;
+  --flip-front-background: #eee;
+  --flip-back-background: #ccc;
 }
 
 :root[data-theme='light'] {
@@ -16,26 +24,16 @@
   --bento-item-shadow: rgba(0, 0, 0, 0.05);
   --bento-item-hover-shadow: rgba(0, 0, 0, 0.3);
   --main-background-color: #d1d1d1;
-}
 
-/* tiem */
-:root {
-  --background-color: #f7f7f7;
-  --text-color: #333;
   --flip-box-background: #333;
   --flip-box-color: white;
   --separator-color: #333;
+  --flip-front-color: white;
+  --flip-back-color: white;
+  --flip-front-background: #333;
+  --flip-back-background: #555;
 }
 
-:root[data-theme='dark'] {
-  --background-color: #1a1a1a;
-  --text-color: #ccc;
-  --flip-box-background: #555;
-  --flip-box-color: white;
-  --separator-color: #ccc;
-}
-
-/* gradient palette.js */
 :root {
   --red: red;
   --orange: orange;

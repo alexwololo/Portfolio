@@ -19,12 +19,9 @@ body {
 }
 
 .time-separator {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-size: 48px;
   line-height: 80px;
-  color: #333;
+  color: var(--separator-color);
 }
 
 .flip-box {
@@ -36,8 +33,8 @@ body {
   width: 40px;
   height: 80px;
   text-align: center;
-  background-color: #333;
-  color: white;
+  background-color: var(--flip-box-background);
+  color: var(--flip-box-color);
   font-size: 48px;
   line-height: 80px;
   border-radius: 8px;
@@ -62,10 +59,11 @@ body {
 }
 
 .flip-front {
-  background-color: #333;
+  background-color: var(--flip-front-background);
+  color: var(--flip-front-color);
 }
 
 .flip-back {
-  background-color: #555;
-  transform: rotateX(-90deg);
+  background-color: var(--flip-back-background);
+  color: var(--flip-back-color);
 }
