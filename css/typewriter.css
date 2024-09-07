@@ -1,3 +1,8 @@
+#typewriter-container {
+  display: inline-block;
+  position: relative;
+}
+
 #typewriter {
   display: inline-block;
   white-space: nowrap;
@@ -5,6 +10,11 @@
   border-right: 3px solid black;
   animation: blink 0.9s step-end infinite;
   vertical-align: bottom;
+  position: absolute;
+}
+
+#typewriter-placeholder {
+  visibility: hidden;
 }
 
 #static-part {
