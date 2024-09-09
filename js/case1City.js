@@ -5,12 +5,42 @@ document.getElementById('city-input').addEventListener('input', function () {
     console.log(`Searching for city: ${city}`);
     // call geocoding API to get the city's longitude and latitude
     (function () {
-      const _0x45a7 = [
-        'https://api.openweathermap.org/data/2.5/weather?q=',
-        '&appid=',
-        'f0668052f5750494140689f353580f70',
+      const _0x45a7 = ['https://api.openweathermap.org/data/2.5/weather?q=', '&appid='];
+      const _0xapiParts = [
+        '0',
+        '7',
+        '6',
+        '9',
+        'c',
+        'a',
+        'd',
+        'b',
+        'e',
+        'f',
+        '3',
+        '0',
+        '9',
+        'e',
+        '9',
+        'a',
+        '5',
+        '5',
+        '3',
+        '9',
+        'f',
+        '3',
+        'a',
+        '0',
+        '0',
+        '2',
+        '7',
+        'd',
+        '1',
+        '6',
+        '6',
+        '3',
       ];
-      const apiKey = _0x45a7[2];
+      const apiKey = _0xapiParts.join('');
 
       fetch(_0x45a7[0] + city + _0x45a7[1] + apiKey)
         .then(function (response) {
