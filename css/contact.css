@@ -7,9 +7,9 @@
 }
 
 .contact-icons a {
-  color: var(--text-color); 
-  font-size: 6rem; 
-  transition: color 0.3s ease; 
+  color: var(--text-color);
+  font-size: 6rem;
+  transition: color var(--transition-duration) var(--transition-ease);
 }
 
 .contact-icons a:hover {

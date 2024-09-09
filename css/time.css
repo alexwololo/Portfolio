@@ -56,6 +56,9 @@ body {
   font-size: 48px;
   font-weight: bold;
   color: #fff;
+  transition: background-color var(--transition-duration) var(--transition-ease),
+    color var(--transition-duration) var(--transition-ease),
+    transform var(--transition-duration) var(--transition-ease);
 }
 
 .flip-front {

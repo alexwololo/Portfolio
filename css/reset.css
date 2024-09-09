@@ -1,9 +1,19 @@
 /* reset.css */
 
+:root {
+  --transition-duration: 0.08s;
+  --transition-ease: ease;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: background-color var(--transition-duration) var(--transition-ease),
+    color var(--transition-duration) var(--transition-ease),
+    border-color var(--transition-duration) var(--transition-ease),
+    box-shadow var(--transition-duration) var(--transition-ease),
+    transform var(--transition-duration) var(--transition-ease);
 }
 
 body,

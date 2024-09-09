@@ -14,6 +14,7 @@
   --flip-front-background: #eee;
   --flip-back-background: #ccc;
   --highlight-color: #00ffff;
+  --handle-color: #cccccc;
 }
 
 :root[data-theme='light'] {
@@ -32,6 +33,7 @@
   --flip-front-background: #333;
   --flip-back-background: #555;
   --highlight-color: #2196f3;
+  --handle-color: #333333;
 }
 
 :root {
