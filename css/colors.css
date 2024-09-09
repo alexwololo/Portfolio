@@ -8,32 +8,42 @@
   --main-background-color: #444444;
   --flip-box-background: #eee;
   --flip-box-color: #333;
+  --clock-number-color: #444;
   --separator-color: #eee;
-  --flip-front-color: #333;
-  --flip-back-color: #333;
+  --flip-front-color: #555;
+  --flip-back-color: #555;
   --flip-front-background: #eee;
   --flip-back-background: #ccc;
   --highlight-color: #00ffff;
+  --contact-icon-color: #ccc;
   --handle-color: #cccccc;
+  --slider-background: #ccc;
+  --highlight-color: #00ffff;
+  --weather-icon-color: #ffffff;
 }
 
 :root[data-theme='light'] {
   --background-color: #f2f2f2;
-  --text-color: #333333;
+  --text-color: #333;
   --bento-item-background: #ffffff;
   --bento-item-border: #ddd;
   --bento-item-shadow: rgba(0, 0, 0, 0.05);
   --bento-item-hover-shadow: rgba(0, 0, 0, 0.3);
   --main-background-color: #d1d1d1;
-  --flip-box-background: #333;
+  --clock-number-color: #f1f1f1;
+  --flip-box-background: #555;
   --flip-box-color: white;
   --separator-color: #333;
   --flip-front-color: white;
   --flip-back-color: white;
-  --flip-front-background: #333;
+  --flip-front-background: #555;
   --flip-back-background: #555;
   --highlight-color: #2196f3;
-  --handle-color: #333333;
+  --contact-icon-color: #555;
+  --handle-color: #555;
+  --slider-background: #555;
+  --highlight-color: #2196f3;
+  --weather-icon-color: #555;
 }
 
 :root {

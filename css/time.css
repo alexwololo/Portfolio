@@ -4,7 +4,6 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #f7f7f7;
   margin: 0;
 }
 
@@ -34,7 +33,6 @@ body {
   height: 80px;
   text-align: center;
   background-color: var(--flip-box-background);
-  color: var(--flip-box-color);
   font-size: 48px;
   line-height: 80px;
   border-radius: 8px;
@@ -55,18 +53,16 @@ body {
   align-items: center;
   font-size: 48px;
   font-weight: bold;
-  color: #fff;
   transition: background-color var(--transition-duration) var(--transition-ease),
     color var(--transition-duration) var(--transition-ease),
     transform var(--transition-duration) var(--transition-ease);
+  color: var(--clock-number-color);
 }
 
 .flip-front {
   background-color: var(--flip-front-background);
-  color: var(--flip-front-color);
 }
 
 .flip-back {
   background-color: var(--flip-back-background);
-  color: var(--flip-back-color);
 }

@@ -1,3 +1,5 @@
+@import url('colors.css');
+
 #weather-container {
   text-align: center;
   display: flex;
@@ -8,7 +10,7 @@
 
 #weather-icon {
   font-size: 3rem;
-  /* color: #ffa500; */
+  color: var(--weather-icon-color);
   margin-bottom: 10px;
 }
 

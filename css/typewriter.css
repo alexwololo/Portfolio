@@ -1,6 +1,9 @@
+@import url('colors.css');
+
 #typewriter-container {
   display: inline-block;
   position: relative;
+  font-size: 2.5rem;
 }
 
 #typewriter {
@@ -11,6 +14,7 @@
   animation: blink 0.9s step-end infinite;
   vertical-align: bottom;
   position: absolute;
+  color: var(--highlight-color);
 }
 
 #typewriter-placeholder {
@@ -20,6 +24,7 @@
 #static-part {
   display: inline-block;
   vertical-align: bottom;
+  font-size: 2.5rem;
 }
 
 @keyframes blink {

@@ -1,21 +1,5 @@
 @import url('colors.css');
 
-:root[data-theme='dark'] {
-  background-color: var(--background-color);
-  color: var(--text-color);
-  --bento-item-background: var(--bento-item-background);
-  --bento-item-border: var(--bento-item-border);
-  --bento-item-shadow: var(--bento-item-shadow);
-}
-
-:root[data-theme='light'] {
-  background-color: var(--background-color);
-  color: var(--text-color);
-  --bento-item-background: var(--bento-item-background);
-  --bento-item-border: var(--bento-item-border);
-  --bento-item-shadow: var(--bento-item-shadow);
-}
-
 .switch {
   position: relative;
   display: inline-block;
@@ -36,7 +20,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: var(--slider-background);
   transition: 0.4s;
   border-radius: 34px;
 }
@@ -53,8 +37,16 @@
   border-radius: 50%;
 }
 
+.slider:hover {
+  background-color: var(--highlight-color);
+}
+
+input:checked + .slider:hover {
+  background-color: var(--highlight-color);
+}
+
 input:checked + .slider {
-  background-color: #2196f3;
+  background-color: var(--slider-background);
 }
 
 input:checked + .slider:before {

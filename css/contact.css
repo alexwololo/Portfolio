@@ -10,8 +10,11 @@
   color: var(--text-color);
   font-size: 6rem;
   transition: color var(--transition-duration) var(--transition-ease);
+  color: var(--contact-icon-color); 
 }
 
 .contact-icons a:hover {
   color: var(--highlight-color); /
 }
+
+
