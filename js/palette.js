@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
     canvas.width = canvas.offsetWidth;
     canvas.height = canvas.offsetHeight;
     drawColorPicker();
+    showInstructions();
   }
 
   function drawColorPicker() {
@@ -36,6 +37,13 @@ document.addEventListener('DOMContentLoaded', function () {
     context.fillRect(0, 0, canvas.width, canvas.height);
   }
 
+  function showInstructions() {
+    context.font = '24px Arial';
+    context.fillStyle = '#000';
+    context.textAlign = 'center';
+    context.fillText('Press and drag ftw!', canvas.width / 2, canvas.height / 2);
+  }
+
   function pickColor(event) {
     const x = event.offsetX;
     const y = event.offsetY;
@@ -54,12 +62,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (targetElement) {
       targetElement.style.backgroundColor = color;
-      availableElements.splice(randomIndex, 1); // Remove the element from list after it has been colored
+      availableElements.splice(randomIndex, 1); // Remove element from list after it has been colored
     }
   }
 
   canvas.addEventListener('mousedown', function () {
     isMouseDown = true;
+    drawColorPicker();
+    showInstructions();
   });
 
   canvas.addEventListener('mouseup', function () {
@@ -78,4 +88,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   window.addEventListener('resize', resizeCanvas);
   resizeCanvas();
+
+  canvas.style.cursor = 'crosshair';
 });
