@@ -99,7 +99,7 @@ document.getElementById('city-input').addEventListener('input', function () {
           console.log(
             `City: ${data.name}, Temperature: ${temperature}°C, Wind Speed: ${windSpeed} m/s, Description: ${description}`
           );
-          document.querySelector('h2').textContent = `Weather in ${data.name}`;
+          document.querySelector('#weather h2').textContent = `Weather in ${data.name}`; // Uppdaterar endast vädersektionens h2
           document.getElementById('temperature').textContent = `${temperature}°C`;
           document.getElementById('wind').textContent = `Wind: ${windSpeed} m/s`;
           updateWeatherIconOpenWeather(data.weather[0].icon);
