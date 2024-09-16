@@ -6,9 +6,12 @@ const goalX = gridSize - 1;
 const goalY = gridSize - 1;
 let enemyX = gridSize - 1;
 let enemyY = 0;
+const obstacleX = 1; // Obstacle in the middle
+const obstacleY = 1;
 
-// initialize
 function createGrid() {
+  // Create the grid n place items
+  console.log('Grid is created');
   gridContainer.style.display = 'grid';
   gridContainer.style.gridTemplateColumns = 'repeat(' + gridSize + ', 40px)';
   gridContainer.style.gridTemplateRows = 'repeat(' + gridSize + ', 40px)';
@@ -19,11 +22,12 @@ function createGrid() {
     cell.classList.add('grid-item');
     gridContainer.appendChild(cell);
   }
-  // refresh
   updatePlayer();
 }
 
 function updatePlayer() {
+  // Update player enemy goal n obstacle positions
+  console.log('Player is at:', playerX, playerY);
   const cells = document.querySelectorAll('.grid-item');
   cells.forEach(function (cell) {
     cell.textContent = '';
@@ -32,78 +36,82 @@ function updatePlayer() {
   const playerIndex = playerY * gridSize + playerX;
   const goalIndex = goalY * gridSize + goalX;
   const enemyIndex = enemyY * gridSize + enemyX;
+  const obstacleIndex = obstacleY * gridSize + obstacleX;
 
-  cells[playerIndex].textContent = '🧙';
-  cells[goalIndex].textContent = '🏁';
-  cells[enemyIndex].textContent = '👹';
+  cells[playerIndex].textContent = '🧙'; // Player
+  cells[goalIndex].textContent = '🏁'; // Goal
+  cells[enemyIndex].textContent = '👹'; // Enemy
+  cells[obstacleIndex].textContent = '🧱'; // Obstacle
 }
 
 function movePlayer(dx, dy) {
-  if (playerX + dx >= 10 && playerX + dx < gridSize) {
-    playerX += dx;
+  // Move the player by dx, dy if within bounds
+  const newX = playerX + dx;
+  const newY = playerY + dy;
+
+  console.log('Moving to:', newX, newY);
+
+  if (newX >= 0 && newX < gridSize) {
+    playerX = newX;
   }
-  if (playerY + dy >= 0 && playerY + dy < gridSize) {
-    playerY += dy;
+  if (newY >= 0 && newY < gridSize) {
+    playerY = newY;
   }
+
   updatePlayer();
-  moveEnemy();
   checkWinOrLose();
 }
 
-function moveEnemy() {
-  if (enemyX < playerX) {
-    enemyX++;
-  } else if (enemyX > playerX) {
-    enemyX--;
-  }
-
-  if (enemyY < playerY) {
-    enemyY++;
-  } else if (enemyY > playerY) {
-    enemyY--;
-  }
-  updatePlayer();
-}
-
 function checkWinOrLose() {
+  // Check if the player won or hit the enemy
   if (playerX === goalX && playerY === goalY) {
+    console.log('Player won!');
     setTimeout(function () {
-      alert('You the GOAT');
+      alert('You won!');
     }, 100);
   } else if (playerX === enemyX && playerY === enemyY) {
+    console.log('You lost!');
     setTimeout(function () {
-      alert('U ded. can u still move?');
+      alert('You lost!');
     }, 100);
   }
 }
 
 document.getElementById('up').addEventListener('click', function () {
+  console.log('Up button clicked');
   movePlayer(0, -1);
 });
 
 document.getElementById('down').addEventListener('click', function () {
+  console.log('Down button clicked');
   movePlayer(0, 1);
 });
 
 document.getElementById('left').addEventListener('click', function () {
+  console.log('Left button clicked');
   movePlayer(-1, 0);
 });
 
 document.getElementById('right').addEventListener('click', function () {
+  console.log('Right button clicked');
   movePlayer(1, 0);
 });
 
 document.addEventListener('keydown', function (event) {
   event.preventDefault();
   if (event.key === 'ArrowUp') {
+    console.log('Arrow up pressed');
     movePlayer(0, -1);
   } else if (event.key === 'ArrowDown') {
+    console.log('Arrow down pressed');
     movePlayer(0, 1);
   } else if (event.key === 'ArrowLeft') {
+    console.log('Arrow left pressed');
     movePlayer(-1, 0);
   } else if (event.key === 'ArrowRight') {
+    console.log('Arrow right pressed');
     movePlayer(1, 0);
   }
 });
 
-createGrid();
+createGrid(); // Initialise the grid when the page loads
