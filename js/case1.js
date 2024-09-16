@@ -13,8 +13,8 @@
 
 const gridContainer = document.getElementById('grid-container');
 const gridSize = 3;
-let playerX = 0;
-let playerY = 0;
+let playerX = Math.floor(gridSize / 2);
+let playerY = Math.floor(gridSize / 2);
 
 function createGrid() {
   gridContainer.style.display = 'grid';
@@ -37,14 +37,9 @@ function updatePlayer() {
     cell.textContent = '';
   });
 
-  const middleX = Math.floor(gridSize / 2);
-  const middleY = Math.floor(gridSize / 2);
-  const playerIndex = middleY * gridSize + middleX;
-
+  const playerIndex = playerY * gridSize + playerX;
   cells[playerIndex].textContent = '🧙';
 }
-
-createGrid();
 
 document.addEventListener('keydown', function (event) {
   if (event.key === 'ArrowUp' && playerY > 0) {
@@ -58,3 +53,5 @@ document.addEventListener('keydown', function (event) {
   }
   updatePlayer();
 });
+
+createGrid();
