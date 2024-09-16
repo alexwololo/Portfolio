@@ -8,6 +8,7 @@ let enemyX = gridSize - 1;
 let enemyY = 0;
 const obstacleX = Math.floor(gridSize / 2); // Obstacle in the middle, always in centre
 const obstacleY = Math.floor(gridSize / 2);
+let steps = 0; // Step counter
 
 function createGrid() {
   // Create the grid and place items
@@ -63,11 +64,15 @@ function movePlayer(dx, dy) {
     playerY = newY;
   }
 
+  steps++; // Incrementstep counter
+  console.log('Steps taken:', steps);
+
   updatePlayer();
   checkWinOrLose();
 }
 
 function checkWinOrLose() {
+  // Check if the player won or hit the enemy
   if (playerX === goalX && playerY === goalY) {
     console.log('Player won!');
     setTimeout(function () {
