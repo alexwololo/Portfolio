@@ -51,6 +51,11 @@ function movePlayer(dx, dy) {
 
   console.log('Moving to:', newX, newY);
 
+  if (newX === obstacleX && newY === obstacleY) {
+    console.log('Cannot move to obstacle');
+    return; // Block movement if it is towards the obstacle
+  }
+
   if (newX >= 0 && newX < gridSize) {
     playerX = newX;
   }
@@ -63,7 +68,6 @@ function movePlayer(dx, dy) {
 }
 
 function checkWinOrLose() {
-  // Check if the player won or hit the enemy
   if (playerX === goalX && playerY === goalY) {
     console.log('Player won!');
     setTimeout(function () {
@@ -77,7 +81,7 @@ function checkWinOrLose() {
   }
 }
 
-// Opponent movement logic
+// Opponent movement
 function moveEnemy() {
   /*
   // Move the enemy towards the player
