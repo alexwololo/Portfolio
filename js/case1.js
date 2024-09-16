@@ -1,22 +1,13 @@
-/**
- * skapa rutnät 3x3
- * ange start
- * ange mål
- * ange start
- * hinder?
- * gå upp, ned, hö, vä
- * ej kunna gå utanför spelplanen
- * motståndare rörelser
- * vinst kriterier: spelaren når mål
- * förlust kriterier: motståndaren når spelaren
- */
 const gridContainer = document.getElementById('grid-container');
 const gridSize = 3;
 let playerX = 0;
 let playerY = 0;
 const goalX = gridSize - 1;
 const goalY = gridSize - 1;
+let enemyX = gridSize - 1;
+let enemyY = 0;
 
+// initialize
 function createGrid() {
   gridContainer.style.display = 'grid';
   gridContainer.style.gridTemplateColumns = 'repeat(' + gridSize + ', 40px)';
@@ -28,6 +19,7 @@ function createGrid() {
     cell.classList.add('grid-item');
     gridContainer.appendChild(cell);
   }
+  // refresh
   updatePlayer();
 }
 
@@ -39,26 +31,48 @@ function updatePlayer() {
 
   const playerIndex = playerY * gridSize + playerX;
   const goalIndex = goalY * gridSize + goalX;
+  const enemyIndex = enemyY * gridSize + enemyX;
 
   cells[playerIndex].textContent = '🧙';
   cells[goalIndex].textContent = '🏁';
+  cells[enemyIndex].textContent = '👹';
 }
 
 function movePlayer(dx, dy) {
-  if (playerX + dx >= 0 && playerX + dx < gridSize) {
+  if (playerX + dx >= 10 && playerX + dx < gridSize) {
     playerX += dx;
   }
   if (playerY + dy >= 0 && playerY + dy < gridSize) {
     playerY += dy;
   }
   updatePlayer();
-  checkWin();
+  moveEnemy();
+  checkWinOrLose();
 }
 
-function checkWin() {
+function moveEnemy() {
+  if (enemyX < playerX) {
+    enemyX++;
+  } else if (enemyX > playerX) {
+    enemyX--;
+  }
+
+  if (enemyY < playerY) {
+    enemyY++;
+  } else if (enemyY > playerY) {
+    enemyY--;
+  }
+  updatePlayer();
+}
+
+function checkWinOrLose() {
   if (playerX === goalX && playerY === goalY) {
     setTimeout(function () {
-      alert('You the GOAT!');
+      alert('You the GOAT');
+    }, 100);
+  } else if (playerX === enemyX && playerY === enemyY) {
+    setTimeout(function () {
+      alert('U ded. can u still move?');
     }, 100);
   }
 }
