@@ -42,6 +42,8 @@ function updatePlayer() {
 }
 
 document.addEventListener('keydown', function (event) {
+  event.preventDefault(); // Förhindrar att andra saker markeras
+
   if (event.key === 'ArrowUp' && playerY > 0) {
     playerY--;
   } else if (event.key === 'ArrowDown' && playerY < gridSize - 1) {
