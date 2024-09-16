@@ -12,8 +12,8 @@
  */
 const gridContainer = document.getElementById('grid-container');
 const gridSize = 3;
-let playerX = Math.floor(gridSize / 2);
-let playerY = Math.floor(gridSize / 2);
+let playerX = 0;
+let playerY = 0;
 const goalX = gridSize - 1;
 const goalY = gridSize - 1;
 
@@ -44,29 +44,52 @@ function updatePlayer() {
   cells[goalIndex].textContent = '🏁';
 }
 
-document.addEventListener('keydown', function (event) {
-  event.preventDefault();
-
-  if (event.key === 'ArrowUp' && playerY > 0) {
-    playerY--;
-  } else if (event.key === 'ArrowDown' && playerY < gridSize - 1) {
-    playerY++;
-  } else if (event.key === 'ArrowLeft' && playerX > 0) {
-    playerX--;
-  } else if (event.key === 'ArrowRight' && playerX < gridSize - 1) {
-    playerX++;
+function movePlayer(dx, dy) {
+  if (playerX + dx >= 0 && playerX + dx < gridSize) {
+    playerX += dx;
   }
-
+  if (playerY + dy >= 0 && playerY + dy < gridSize) {
+    playerY += dy;
+  }
   updatePlayer();
   checkWin();
-});
+}
 
 function checkWin() {
   if (playerX === goalX && playerY === goalY) {
     setTimeout(function () {
-      alert('You win!');
+      alert('You the GOAT!');
     }, 100);
   }
 }
+
+document.getElementById('up').addEventListener('click', function () {
+  movePlayer(0, -1);
+});
+
+document.getElementById('down').addEventListener('click', function () {
+  movePlayer(0, 1);
+});
+
+document.getElementById('left').addEventListener('click', function () {
+  movePlayer(-1, 0);
+});
+
+document.getElementById('right').addEventListener('click', function () {
+  movePlayer(1, 0);
+});
+
+document.addEventListener('keydown', function (event) {
+  event.preventDefault();
+  if (event.key === 'ArrowUp') {
+    movePlayer(0, -1);
+  } else if (event.key === 'ArrowDown') {
+    movePlayer(0, 1);
+  } else if (event.key === 'ArrowLeft') {
+    movePlayer(-1, 0);
+  } else if (event.key === 'ArrowRight') {
+    movePlayer(1, 0);
+  }
+});
 
 createGrid();
