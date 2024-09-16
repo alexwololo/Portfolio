@@ -6,8 +6,8 @@ const goalX = gridSize - 1;
 const goalY = gridSize - 1;
 let enemyX = gridSize - 1;
 let enemyY = 0;
-const obstacleX = 1; // Obstacle in the middle
-const obstacleY = 1;
+const obstacleX = Math.floor(gridSize / 2); // Obstacle in the middle, always in centre
+const obstacleY = Math.floor(gridSize / 2);
 
 function createGrid() {
   // Create the grid n place items
