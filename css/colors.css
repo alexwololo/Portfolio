@@ -20,6 +20,7 @@
   --slider-background: #ccc;
   --highlight-color: #00ffff;
   --weather-icon-color: #ffffff;
+  --input-border-color: #cccccc51;
 }
 
 :root[data-theme='light'] {
@@ -44,6 +45,7 @@
   --slider-background: #555;
   --highlight-color: #2196f3;
   --weather-icon-color: #555;
+  --input-border-color: #55555543;
 }
 
 :root {

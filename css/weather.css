@@ -46,6 +46,8 @@ h2 {
   padding: 8px;
   font-size: 1rem;
   text-align: center;
+  border-radius: 5px;
+  border: 1px solid var(--input-border-color);
 }
 
 #city-result {
