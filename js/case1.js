@@ -10,11 +10,12 @@
  * vinst kriterier: spelaren når mål
  * förlust kriterier: motståndaren når spelaren
  */
-
 const gridContainer = document.getElementById('grid-container');
 const gridSize = 3;
 let playerX = Math.floor(gridSize / 2);
 let playerY = Math.floor(gridSize / 2);
+const goalX = gridSize - 1;
+const goalY = gridSize - 1;
 
 function createGrid() {
   gridContainer.style.display = 'grid';
@@ -32,17 +33,19 @@ function createGrid() {
 
 function updatePlayer() {
   const cells = document.querySelectorAll('.grid-item');
-
   cells.forEach(function (cell) {
     cell.textContent = '';
   });
 
   const playerIndex = playerY * gridSize + playerX;
+  const goalIndex = goalY * gridSize + goalX;
+
   cells[playerIndex].textContent = '🧙';
+  cells[goalIndex].textContent = '🏁';
 }
 
 document.addEventListener('keydown', function (event) {
-  event.preventDefault(); // Förhindrar att andra saker markeras
+  event.preventDefault();
 
   if (event.key === 'ArrowUp' && playerY > 0) {
     playerY--;
@@ -53,7 +56,17 @@ document.addEventListener('keydown', function (event) {
   } else if (event.key === 'ArrowRight' && playerX < gridSize - 1) {
     playerX++;
   }
+
   updatePlayer();
+  checkWin();
 });
+
+function checkWin() {
+  if (playerX === goalX && playerY === goalY) {
+    setTimeout(function () {
+      alert('You win!');
+    }, 100);
+  }
+}
 
 createGrid();
