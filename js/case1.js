@@ -98,7 +98,7 @@ document.getElementById('right').addEventListener('click', function () {
 });
 
 document.addEventListener('keydown', function (event) {
-  event.preventDefault();
+  // event.preventDefault(); // disables selection but also f12 and input field
   if (event.key === 'ArrowUp') {
     console.log('Arrow up pressed');
     movePlayer(0, -1);
