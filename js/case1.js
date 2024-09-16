@@ -10,7 +10,7 @@ const obstacleX = Math.floor(gridSize / 2); // Obstacle in the middle, always in
 const obstacleY = Math.floor(gridSize / 2);
 
 function createGrid() {
-  // Create the grid n place items
+  // Create the grid and place items
   console.log('Grid is created');
   gridContainer.style.display = 'grid';
   gridContainer.style.gridTemplateColumns = 'repeat(' + gridSize + ', 40px)';
@@ -26,7 +26,7 @@ function createGrid() {
 }
 
 function updatePlayer() {
-  // Update player enemy goal n obstacle positions
+  // Update player enemy goal and obstacle positions
   console.log('Player is at:', playerX, playerY);
   const cells = document.querySelectorAll('.grid-item');
   cells.forEach(function (cell) {
@@ -77,41 +77,69 @@ function checkWinOrLose() {
   }
 }
 
+// Opponent movement logic
+function moveEnemy() {
+  /*
+  // Move the enemy towards the player
+  if (enemyX < playerX) {
+    enemyX++;
+  } else if (enemyX > playerX) {
+    enemyX--;
+  }
+
+  if (enemyY < playerY) {
+    enemyY++;
+  } else if (enemyY > playerY) {
+    enemyY--;
+  }
+
+  updatePlayer(); // Update grid after enemy movement
+  */
+}
+
 document.getElementById('up').addEventListener('click', function () {
   console.log('Up button clicked');
   movePlayer(0, -1);
+  // moveEnemy();
 });
 
 document.getElementById('down').addEventListener('click', function () {
   console.log('Down button clicked');
   movePlayer(0, 1);
+  // moveEnemy();
 });
 
 document.getElementById('left').addEventListener('click', function () {
   console.log('Left button clicked');
   movePlayer(-1, 0);
+  // moveEnemy();
 });
 
 document.getElementById('right').addEventListener('click', function () {
   console.log('Right button clicked');
   movePlayer(1, 0);
+  // moveEnemy();
 });
 
 document.addEventListener('keydown', function (event) {
-  // event.preventDefault(); // disables selection but also f12 and input field
+  // event.preventDefault(); // disables selection but also F12 and input fields
   if (event.key === 'ArrowUp') {
     console.log('Arrow up pressed');
     movePlayer(0, -1);
+    // moveEnemy();
   } else if (event.key === 'ArrowDown') {
     console.log('Arrow down pressed');
     movePlayer(0, 1);
+    // moveEnemy();
   } else if (event.key === 'ArrowLeft') {
     console.log('Arrow left pressed');
     movePlayer(-1, 0);
+    // moveEnemy();
   } else if (event.key === 'ArrowRight') {
     console.log('Arrow right pressed');
     movePlayer(1, 0);
+    // moveEnemy();
   }
 });
 
-createGrid(); // Initialise the grid when the page loads
+createGrid();
