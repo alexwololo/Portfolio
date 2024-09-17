@@ -1,5 +1,5 @@
 const gridContainer = document.getElementById('grid-container');
-const gridSize = 3;
+const gridSize = 5;
 let playerX = 0;
 let playerY = 0;
 const goalX = gridSize - 1;
@@ -16,7 +16,7 @@ function createGrid() {
   gridContainer.style.display = 'grid';
   gridContainer.style.gridTemplateColumns = 'repeat(' + gridSize + ', 40px)';
   gridContainer.style.gridTemplateRows = 'repeat(' + gridSize + ', 40px)';
-  gridContainer.style.gap = '5px';
+  gridContainer.style.gap = '4px';
 
   for (let i = 0; i < gridSize * gridSize; i++) {
     const cell = document.createElement('div');
@@ -39,10 +39,10 @@ function updatePlayer() {
   const enemyIndex = enemyY * gridSize + enemyX;
   const obstacleIndex = obstacleY * gridSize + obstacleX;
 
-  cells[playerIndex].textContent = '🧙'; // Player
-  cells[goalIndex].textContent = '🏁'; // Goal
-  cells[enemyIndex].textContent = '👹'; // Enemy
-  cells[obstacleIndex].textContent = '🧱'; // Obstacle
+  cells[playerIndex].textContent = '🧙';
+  cells[goalIndex].textContent = '🏁';
+  cells[enemyIndex].textContent = '👹';
+  cells[obstacleIndex].textContent = '🧱';
 }
 
 function movePlayer(dx, dy) {
@@ -69,6 +69,7 @@ function movePlayer(dx, dy) {
 
   updatePlayer();
   checkWinOrLose();
+  moveEnemy(); // Flytta motståndaren efter varje spelarrörelse
 }
 
 function checkWinOrLose() {
@@ -88,46 +89,40 @@ function checkWinOrLose() {
 
 // Opponent movement
 function moveEnemy() {
-  /*
   // Move the enemy towards the player
-  if (enemyX < playerX) {
+  if (enemyX < playerX && (enemyX + 1 !== obstacleX || enemyY !== obstacleY)) {
     enemyX++;
-  } else if (enemyX > playerX) {
+  } else if (enemyX > playerX && (enemyX - 1 !== obstacleX || enemyY !== obstacleY)) {
     enemyX--;
   }
 
-  if (enemyY < playerY) {
+  if (enemyY < playerY && (enemyY + 1 !== obstacleY || enemyX !== obstacleX)) {
     enemyY++;
-  } else if (enemyY > playerY) {
+  } else if (enemyY > playerY && (enemyY - 1 !== obstacleY || enemyX !== obstacleX)) {
     enemyY--;
   }
 
   updatePlayer(); // Update grid after enemy movement
-  */
 }
 
 document.getElementById('up').addEventListener('click', function () {
   console.log('Up button clicked');
   movePlayer(0, -1);
-  // moveEnemy();
 });
 
 document.getElementById('down').addEventListener('click', function () {
   console.log('Down button clicked');
   movePlayer(0, 1);
-  // moveEnemy();
 });
 
 document.getElementById('left').addEventListener('click', function () {
   console.log('Left button clicked');
   movePlayer(-1, 0);
-  // moveEnemy();
 });
 
 document.getElementById('right').addEventListener('click', function () {
   console.log('Right button clicked');
   movePlayer(1, 0);
-  // moveEnemy();
 });
 
 document.addEventListener('keydown', function (event) {
@@ -135,19 +130,15 @@ document.addEventListener('keydown', function (event) {
   if (event.key === 'ArrowUp') {
     console.log('Arrow up pressed');
     movePlayer(0, -1);
-    // moveEnemy();
   } else if (event.key === 'ArrowDown') {
     console.log('Arrow down pressed');
     movePlayer(0, 1);
-    // moveEnemy();
   } else if (event.key === 'ArrowLeft') {
     console.log('Arrow left pressed');
     movePlayer(-1, 0);
-    // moveEnemy();
   } else if (event.key === 'ArrowRight') {
     console.log('Arrow right pressed');
     movePlayer(1, 0);
-    // moveEnemy();
   }
 });
 

@@ -41,7 +41,7 @@
 .side-controls {
   display: flex;
   justify-content: center;
-  gap: 20px; /* Mellanrum mellan vänster och högerpilar */
+  gap: 20px;
 }
 
 .control-button {
