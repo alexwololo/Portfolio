@@ -1,14 +1,14 @@
 @import url('colors.css');
 
 #game-container {
-  background-color: var(--game-container-opposite-background);
+  background-color: var(--case1-background-color);
   padding: 10px;
 }
 
 .grid-item {
-  background-color: var(--bento-item-background);
-  border: 2px solid var(--bento-item-border);
-  color: var(--text-color);
+  background-color: var(--case1-grid-background);
+  border: 2px solid var(--case1-grid-border);
+  color: var(--case1-text-color);
   font-size: 24px;
   width: 40px;
   height: 40px;
@@ -41,7 +41,7 @@
 .side-controls {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 20px; /* Mellanrum mellan vänster och högerpilar */
 }
 
 .control-button {
@@ -51,9 +51,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--bento-item-background);
-  border: 2px solid var(--bento-item-border);
-  color: var(--text-color);
+  background-color: var(--case1-control-button-background);
+  border: 2px solid var(--case1-control-button-border);
+  color: var(--case1-control-button-text);
   cursor: pointer;
   user-select: none;
   margin-top: 10px;
@@ -63,4 +63,9 @@
   font-size: 1.5rem;
   text-align: center;
   margin-top: 20px;
+  color: var(--case1-step-count-color);
+}
+
+#up {
+  margin-top: 25px;
 }

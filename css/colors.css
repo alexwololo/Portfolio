@@ -21,8 +21,14 @@
   --highlight-color: #00ffff;
   --weather-icon-color: #ffffff;
   --input-border-color: #cccccc51;
-  --game-container-background: var(--bento-item-background);
-  --game-container-opposite-background: var(--bento-item-border);
+  --case1-background-color: #8c8c8c;
+  --case1-text-color: #cccccc;
+  --case1-grid-background: #bfbfbf;
+  --case1-grid-border: #444444;
+  --case1-control-button-background: #8c8c8c;
+  --case1-control-button-border: #444444;
+  --case1-control-button-text: #fff;
+  --case1-step-count-color: #cccccc;
 }
 
 :root[data-theme='light'] {
@@ -48,8 +54,14 @@
   --highlight-color: #2196f3;
   --weather-icon-color: #555;
   --input-border-color: #55555543;
-  --game-container-background: var(--bento-item-background);
-  --game-container-opposite-background: var(--bento-item-border);
+  --case1-background-color: #737373;
+  --case1-text-color: #333333;
+  --case1-grid-background: #9e9e9e;
+  --case1-grid-border: #cccccc;
+  --case1-control-button-background: #737373;
+  --case1-control-button-border: #cccccc;
+  --case1-control-button-text: #000;
+  --case1-step-count-color: #333333;
 }
 
 :root {
