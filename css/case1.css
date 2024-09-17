@@ -1,7 +1,14 @@
+@import url('colors.css');
+
+#game-container {
+  background-color: var(--game-container-opposite-background);
+  padding: 10px;
+}
+
 .grid-item {
-  background-color: #2f00ff;
-  border: 2px solid #ff4400;
-  color: #818181;
+  background-color: var(--bento-item-background);
+  border: 2px solid var(--bento-item-border);
+  color: var(--text-color);
   font-size: 24px;
   width: 40px;
   height: 40px;
@@ -22,7 +29,6 @@
   grid-template-columns: repeat(3, 40px);
   grid-template-rows: repeat(3, 40px);
   gap: 5px;
-  margin-bottom: 20px; /* Utrymme mellan spelplanen och pilarna */
 }
 
 .controls {
@@ -35,7 +41,7 @@
 .side-controls {
   display: flex;
   justify-content: center;
-  gap: 20px; /* Mellanrum mellan vänster och högerpilar */
+  gap: 20px;
 }
 
 .control-button {
@@ -45,9 +51,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #2f00ff;
-  border: 2px solid #ff4400;
-  color: #fff;
+  background-color: var(--bento-item-background);
+  border: 2px solid var(--bento-item-border);
+  color: var(--text-color);
   cursor: pointer;
   user-select: none;
   margin-top: 10px;

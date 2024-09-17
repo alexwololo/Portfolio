@@ -21,6 +21,8 @@
   --highlight-color: #00ffff;
   --weather-icon-color: #ffffff;
   --input-border-color: #cccccc51;
+  --game-container-background: var(--bento-item-background);
+  --game-container-opposite-background: var(--bento-item-border);
 }
 
 :root[data-theme='light'] {
@@ -46,6 +48,8 @@
   --highlight-color: #2196f3;
   --weather-icon-color: #555;
   --input-border-color: #55555543;
+  --game-container-background: var(--bento-item-background);
+  --game-container-opposite-background: var(--bento-item-border);
 }
 
 :root {
