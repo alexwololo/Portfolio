@@ -1,0 +1,36 @@
+#about {
+  text-align: center;
+  padding: 20px;
+}
+
+.profile-image {
+  width: 240px;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .profile-image {
+    width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-image {
+    width: 150px;
+  }
+}
+
+#about p {
+  font-size: 1.1rem;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+@media (max-width: 768px) {
+  #about p {
+    font-size: 1rem;
+    max-width: 90%;
+  }
+}
