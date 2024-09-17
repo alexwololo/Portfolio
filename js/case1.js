@@ -9,6 +9,7 @@ let enemyY = 0;
 const obstacleX = Math.floor(gridSize / 2); // Obstacle in the middle, always in centre
 const obstacleY = Math.floor(gridSize / 2);
 let steps = 0; // Step counter
+let gameOver = false; //prevent movements after caught
 
 function createGrid() {
   // Create the grid and place items
@@ -45,8 +46,10 @@ function updatePlayer() {
   cells[obstacleIndex].textContent = '🧱';
 }
 
+// Move the player by dx, dy if within bounds
 function movePlayer(dx, dy) {
-  // Move the player by dx, dy if within bounds
+  if (gameOver) return; // Stop further movements after being caught
+
   const newX = playerX + dx;
   const newY = playerY + dy;
 
@@ -69,7 +72,7 @@ function movePlayer(dx, dy) {
 
   updatePlayer();
   checkWinOrLose();
-  moveEnemy(); // Flytta motståndaren efter varje spelarrörelse
+  moveEnemy(); // Move the enemy after each player move
 }
 
 function checkWinOrLose() {
@@ -81,6 +84,7 @@ function checkWinOrLose() {
     }, 100);
   } else if (playerX === enemyX && playerY === enemyY) {
     console.log('You lost!');
+    gameOver = true; // Block more movements
     setTimeout(function () {
       alert('You lost!');
     }, 100);
@@ -103,6 +107,7 @@ function moveEnemy() {
   }
 
   updatePlayer(); // Update grid after enemy movement
+  checkWinOrLose(); // check if enemy caught player
 }
 
 document.getElementById('up').addEventListener('click', function () {
@@ -127,6 +132,8 @@ document.getElementById('right').addEventListener('click', function () {
 
 document.addEventListener('keydown', function (event) {
   // event.preventDefault(); // disables selection but also F12 and input fields
+  if (gameOver) return; // Block movements with keyboard if the game is over
+
   if (event.key === 'ArrowUp') {
     console.log('Arrow up pressed');
     movePlayer(0, -1);
