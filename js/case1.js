@@ -108,17 +108,18 @@ function resetGame() {
 
 // Opponent movement
 function moveEnemy() {
-  // Move the enemy towards the player
-  if (enemyX < playerX && (enemyX + 1 !== obstacleX || enemyY !== obstacleY)) {
-    enemyX++;
-  } else if (enemyX > playerX && (enemyX - 1 !== obstacleX || enemyY !== obstacleY)) {
-    enemyX--;
-  }
-
-  if (enemyY < playerY && (enemyY + 1 !== obstacleY || enemyX !== obstacleX)) {
-    enemyY++;
-  } else if (enemyY > playerY && (enemyY - 1 !== obstacleY || enemyX !== obstacleX)) {
-    enemyY--;
+  if (Math.abs(enemyX - playerX) > Math.abs(enemyY - playerY)) {
+    if (enemyX < playerX && (enemyX + 1 !== obstacleX || enemyY !== obstacleY)) {
+      enemyX++;
+    } else if (enemyX > playerX && (enemyX - 1 !== obstacleX || enemyY !== obstacleY)) {
+      enemyX--;
+    }
+  } else {
+    if (enemyY < playerY && (enemyY + 1 !== obstacleY || enemyX !== obstacleX)) {
+      enemyY++;
+    } else if (enemyY > playerY && (enemyY - 1 !== obstacleY || enemyX !== obstacleX)) {
+      enemyY--;
+    }
   }
 
   updatePlayer(); // Update grid after enemy movement
