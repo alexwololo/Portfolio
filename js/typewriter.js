@@ -1,4 +1,4 @@
-const words = ['React', 'JS', 'CSS', 'HTML'];
+const words = ['REST', 'React', 'Typescript', 'Javascript', 'HTML', 'CSS'];
 let wordIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
