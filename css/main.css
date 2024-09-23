@@ -111,37 +111,32 @@ body {
   grid-area: case2;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1220px), (max-height: 1200px) {
   .bento-grid {
-    grid-template-columns: 1fr 1fr; /* Two columns layout */
+    grid-template-columns: 1fr 1fr;
     grid-template-areas:
       'header header'
       'about contact'
       'theme color'
       'clock weather'
       'date case1'
-      'case2 case2'; /* Arrange items in two columns */
+      'case2 case2';
   }
+}
 
-  @media (max-width: 600px) {
-    .bento-grid {
-      grid-template-columns: 1fr; /* Single column on small screens */
-      grid-template-areas:
-        'header'
-        'about'
-        'contact'
-        'theme'
-        'color'
-        'clock'
-        'weather'
-        'date'
-        'case1'
-        'case2'; /* Stack all sections vertically */
-    }
-  }
-
-  .bento-item {
-    padding: 10px; /* Reduce padding for smaller screens */
-    font-size: 0.9rem;
+@media (max-width: 600px), (max-height: 600px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'header'
+      'about'
+      'contact'
+      'theme'
+      'color'
+      'clock'
+      'weather'
+      'date'
+      'case1'
+      'case2';
   }
 }

@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
     context.font = '24px Arial';
     context.fillStyle = '#000';
     context.textAlign = 'center';
-    context.fillText('Press and drag ftw!', canvas.width / 2, canvas.height / 2);
+    context.fillText('Press and drag', canvas.width / 2, canvas.height / 2);
   }
 
   function pickColor(event) {
