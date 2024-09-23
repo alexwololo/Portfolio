@@ -78,18 +78,19 @@ function movePlayer(dx, dy) {
 }
 
 function checkWinOrLose() {
-  // Check if the player won or hit the enemy
+  // Check if the player reached the goal or the enemy
   if (playerX === goalX && playerY === goalY) {
     console.log('Player won!');
     setTimeout(function () {
       alert('You won!');
+      resetGame();
     }, 100);
   } else if (playerX === enemyX && playerY === enemyY) {
     console.log('You lost!');
-    gameOver = true; // Block more movements
+    gameOver = true;
     setTimeout(function () {
       alert('You lost!');
-      resetGame(); // Reset the game after alert
+      resetGame();
     }, 100);
   }
 }
