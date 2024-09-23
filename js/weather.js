@@ -6,9 +6,11 @@ function fetchSMHIWeather() {
   console.log('Fetching weather from SMHI...');
   fetch(smhiUrl)
     .then(function (response) {
+      console.log('Received response from SMHI');
       return response.json();
     })
     .then(function (data) {
+      console.log('Parsed SMHI data:', data);
       const temperature = data.timeSeries[0].parameters.find(function (param) {
         return param.name === 't';
       }).values[0];
@@ -32,6 +34,7 @@ function fetchSMHIWeather() {
 
 function updateWeatherIcon(symbol) {
   const weatherIcon = document.getElementById('weather-icon');
+  console.log('Updating weather icon with symbol:', symbol);
   if (symbol === 1) {
     weatherIcon.className = 'fas fa-sun';
   } else if (symbol >= 2 && symbol <= 3) {
@@ -47,6 +50,7 @@ function updateWeatherIcon(symbol) {
   } else {
     weatherIcon.className = 'fas fa-cloud';
   }
+  console.log('Weather icon updated:', weatherIcon.className);
 }
 
 function debounce(func, delay) {
@@ -58,12 +62,12 @@ function debounce(func, delay) {
     timeout = setTimeout(function () {
       func.apply(context, args);
     }, delay);
-    console.log('Debounce triggered');
+    console.log('Debounce triggered, delay:', delay);
   };
 }
 
 const fetchWeather = debounce(function (city) {
-  console.log('Fetching weather for: ' + city);
+  console.log('Fetching weather for:', city);
 
   const baseUrl = 'https://api.openweathermap.org/data/2.5/weather?q=';
   const apiKeyParts = [
@@ -103,53 +107,42 @@ const fetchWeather = debounce(function (city) {
   const apiKey = apiKeyParts.join('');
   const fullUrl = baseUrl + city + '&appid=' + apiKey + '&units=metric';
 
-  console.log('Fetching weather from OpenWeatherMap...');
+  console.log('Fetching weather from OpenWeatherMap with URL:', fullUrl);
   fetch(fullUrl)
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
       if (data.cod === 200) {
-        const temperature = data.main.temp;
-        const windSpeed = data.wind.speed;
-        const description = data.weather[0].description;
-
-        console.log(
-          'City: ' +
-            data.name +
-            ', Temperature: ' +
-            temperature +
-            '°C, Wind Speed: ' +
-            windSpeed +
-            ' m/s, Description: ' +
-            description
-        );
-        document.querySelector('#weather h2').textContent = 'Weather in ' + data.name;
-        document.getElementById('temperature').textContent = temperature + '°C';
-        document.getElementById('wind').textContent = 'Wind: ' + windSpeed + ' m/s';
-        updateWeatherIconOpenWeather(data.weather[0].icon);
+        document.querySelector('#weather h2').textContent = data.name;
+        document.getElementById('temperature').textContent = data.main.temp + '°C';
+        document.getElementById('wind').textContent = 'Wind: ' + data.wind.speed + ' m/s';
+        updateWeatherIcon(data.weather[0].icon);
       } else {
-        console.log('City not found');
-        document.getElementById('temperature').textContent = 'City not found';
+        document.querySelector('#weather h2').textContent = 'City not found';
+        document.getElementById('temperature').textContent = '';
+        document.getElementById('wind').textContent = '';
+        document.getElementById('weather-icon').style.display = 'none';
       }
     })
     .catch(function (error) {
-      console.log('Error fetching data from OpenWeatherMap:', error);
+      console.log('Error fetching weather data:', error);
     });
 }, 2000);
 
 document.getElementById('city-input').addEventListener('input', function () {
   const city = this.value;
-  console.log('User input: ' + city);
+  console.log('User input:', city);
   if (city.length > 2) {
     fetchWeather(city);
   }
 });
 
-function updateWeatherIconOpenWeather(iconCode) {
+function updateWeatherIcon(iconCode) {
   const weatherIcon = document.getElementById('weather-icon');
   const iconUrl = 'http://openweathermap.org/img/wn/' + iconCode + '@2x.png';
   weatherIcon.src = iconUrl;
+  weatherIcon.style.display = 'block';
 }
 
 window.onload = fetchSMHIWeather;
