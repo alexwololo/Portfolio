@@ -9,7 +9,7 @@ let enemyY = goalY;
 const obstacleX = Math.floor(gridSize / 2); // Obstacle in the middle, always in centre
 const obstacleY = Math.floor(gridSize / 2);
 let steps = 0; // Step counter
-let gameOver = false; //prevent movements after caught
+let gameOver = false; // prevent movements after caught
 
 function createGrid() {
   // Create the grid and place items
@@ -67,12 +67,14 @@ function movePlayer(dx, dy) {
     playerY = newY;
   }
 
-  steps++; // Incrementstep counter
+  steps++;
   console.log('Steps taken:', steps);
+
+  document.getElementById('step-count').textContent = steps;
 
   updatePlayer();
   checkWinOrLose();
-  moveEnemy(); // Move the enemy after each player move
+  moveEnemy();
 }
 
 function checkWinOrLose() {
@@ -87,8 +89,21 @@ function checkWinOrLose() {
     gameOver = true; // Block more movements
     setTimeout(function () {
       alert('You lost!');
+      resetGame(); // Reset the game after alert
     }, 100);
   }
+}
+
+function resetGame() {
+  playerX = 0;
+  playerY = 0;
+  enemyX = goalX;
+  enemyY = goalY;
+  steps = 0;
+  gameOver = false; // Allow movements again
+
+  console.log('Game reset');
+  updatePlayer();
 }
 
 // Opponent movement
@@ -132,6 +147,7 @@ document.getElementById('right').addEventListener('click', function () {
 
 document.addEventListener('keydown', function (event) {
   // event.preventDefault(); // disables selection but also F12 and input fields
+
   if (gameOver) return; // Block movements with keyboard if the game is over
 
   if (event.key === 'ArrowUp') {
